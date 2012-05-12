@@ -13,6 +13,10 @@
 				// Add 12 hours to dates, otherwise they are at midnight
 				$startdate_es	+= (12*60*60);
 				$enddate_es	+= (12*60*60);
+				// Check to see start < end, swap if not
+				if($startdate_es > $enddate_es ){
+					 list($startdate_es,$enddate_es)=array($enddate_es,$startdate_es);
+				}
 				$stm = "INSERT INTO vacations VALUES(NULL,'$name_es', '$destination_es','$startdate_es','$enddate_es')";
 				$dbhandle -> exec($stm);
 				$dbhandle -> close();

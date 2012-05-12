@@ -122,6 +122,18 @@
 				}
 
 				$dbhandle -> close();
+				if ($counter === 0){
+					// Show entry for today so we have a functional Gannt table
+					
+					echo("{");
+					echo(' name: "Today",');
+					echo(' desc: "",');
+					echo(" values: [{");
+					echo(' from: "/Date('.time().'000)/",');
+					echo(' to: "/Date('.time().'000)/",');
+					echo(' label: "Today",customClass: "ganttBlue",');
+					echo("}]}");
+				}
 				?>
 				],
 				navigate: "scroll",

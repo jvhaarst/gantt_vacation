@@ -38,8 +38,8 @@
 		<div class="contain">
 			<!-- Gantt graph -->
 			<div class="gantt"></div>
-			<!-- Form to populate and update graph -->
-			<form action="vacation.php" method="post">
+			<!-- Form to populate graph -->
+			<form action="add.php" method="post">
 			<table>
 			<tr>
 			<td>
@@ -81,32 +81,7 @@
 			</table>
 				<input type="submit" value="Submit" />
 			</form>
-			<?php
-			// Add entered data into database
-			if (isset($_POST['name']) && $_POST['name'] != ""){
-
-				$dbhandle = new SQLite3('database/vacation.sqlite');
-				//CREATE TABLE vacations(id INTEGER PRIMARY KEY NOT NULL default 1 , name TEXT, destination TEXT, startdate INTEGER, enddate INTEGER)
-				if (!$dbhandle) die ($error);
-
-				$name_es	= SQLite3::escapeString($_POST['name']);
-				$destination_es	= SQLite3::escapeString($_POST['destination']);
-				$startdate_es	= strtotime($_POST['startdate']);
-				$enddate_es	= strtotime($_POST['enddate']);
-
-				$stm = "INSERT INTO vacations VALUES(NULL,'$name_es', '$destination_es','$startdate_es','$enddate_es')";
-
-				$dbhandle -> exec($stm);
-
-				$results = $dbhandle->query('SELECT bar FROM foo');
-				while ($row = $results->fetchArray()) {
-				    var_dump($row);
-				}
-				$dbhandle -> close();
-				header( 'location:vacation.php' );
-			}
-			?>
-			Edit <a href="phpliteadmin.php?action=row_view&table=vacations">database</href>.
+		Edit <a href="phpliteadmin.php?action=row_view&table=vacations">database</href>.
 		</div>
 
     </body>

@@ -81,7 +81,7 @@
 			</table>
 				<input type="submit" value="Submit" />
 			</form>
-		Edit <a href="phpliteadmin.php?action=row_view&table=vacations">database</href>.
+		Edit <a target="_blank" href="phpliteadmin.php?action=row_view&table=vacations">database</href>.
 		</div>
 
     </body>
@@ -116,7 +116,10 @@
 					echo(" values: [{");
 					echo(' from: "/Date('.$res['startdate'].'000)/",');
 					echo(' to: "/Date('.$res['enddate'].'000)/",');
-					echo(' label: "Vacation",customClass: "ganttRed",');
+					if ($res['destination']===""){
+						$res['destination'] = "Vacation";
+					}
+					echo(' label: "'.$res['destination'].'",customClass: "ganttBlue",');
 					echo("}]}");
 					$counter++;
 				}

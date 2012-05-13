@@ -143,7 +143,7 @@
 				scale: "weeks",
 				maxScale: "months",
 				minScale: "days",
-				itemsPerPage: 10
+				itemsPerPage: 50
 			});
 			$("div#calendar").datepicker({ altField: 'input#startdate', altFormat: 'yy-mm-dd' });
 			$("div#calendar2").datepicker({ altField: 'input#enddate', altFormat: 'yy-mm-dd' });

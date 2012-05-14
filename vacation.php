@@ -105,7 +105,7 @@
 				if (!$dbhandle) die ($error);
 				$counter=0;
 				//$dbhandle -> exec($stm);
-				$result = $dbhandle->query('SELECT * FROM vacations');
+				$result = $dbhandle->query('SELECT * FROM vacations ORDER BY startdate');
 				while($res = $result->fetchArray(SQLITE3_ASSOC)){
 					if ($counter !=0){
 						echo(",");

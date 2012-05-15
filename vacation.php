@@ -18,84 +18,60 @@
 				width: 800px;
 				margin: 0 auto;
 			}
-			h1 {
-				margin: 40px 0 20px 0;
-			}
-			h2 {
-				font-size: 1.5em;
-				padding-bottom: 3px;
-				border-bottom: 1px solid #DDD;
-				margin-top: 50px;
-				margin-bottom: 25px;
-			}
-			table th:first-child {
-				width: 150px;
-			}
 		</style>
     </head>
     <body>
-
 		<div class="contain">
 			<!-- Gantt graph -->
 			<div class="gantt"></div>
 			<!-- Form to populate graph -->
 			<form action="add.php" method="post">
-			<table>
-			<tr>
-			<td>
-				Name:
-			</td>
-			<td>
-				<input type="text" name="name" />
-			</td>
-			</tr>
-			<tr>
-			<td>
-				Destination (optional):
-			</td>
-			<td>
-				<input name="destination" type="text"/>
-			</td>
-			</tr>
-			<tr>
-			<td>
-				Start date:
-			</td>
-			<td>
-				<div id="calendar"/>
-					<input id="startdate" name="startdate" type="text"/>
-				</div>
-			</td>
-			</tr>
-			<tr>
-			<td>
-				End date:
-			</td>
-			<td>
-				<div id="calendar2"/>
-					<input id="enddate" name="enddate" type="text"/>
-				</div>
-			</td>
-			</tr>
-
-			</table>
+				<table>
+					<tr>
+						<td>
+							Name:
+						</td>
+						<td>
+							<input type="text" name="name" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Destination (optional):
+						</td>
+						<td>
+							<input name="destination" type="text"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Start date:
+						</td>
+						<td>
+								<input id="startdate" name="startdate" type="text"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							End date:
+						</td>
+						<td>
+								<input id="enddate" name="enddate" type="text"/>
+						</td>
+					</tr>
+				</table>
 				<input type="submit" value="Submit" />
 			</form>
-		Edit <a target="_blank" href="phpliteadmin.php?action=row_view&table=vacations">database</href>.
+		<a target="_blank" href="phpliteadmin.php?action=row_view&table=vacations">Edit database</href>.
 		</div>
-
     </body>
 	<script src="http://code.jquery.com/jquery.min.js"></script>
 	<script src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
-	<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tooltip.js"></script>
-	<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-popover.js"></script>
 	<script src="jQuery.Gantt/js/jquery.fn.gantt.js"></script>
 	<script src="jQuery.Gantt/js/prettify.js"></script>
     <script>
 		$(function() {
-
 			"use strict";
-
 			$(".gantt").gantt({
 				source: [
 				<?php
@@ -104,7 +80,6 @@
 				//CREATE TABLE vacations(id INTEGER PRIMARY KEY NOT NULL default 1 , name TEXT, destination TEXT, startdate INTEGER, enddate INTEGER)
 				if (!$dbhandle) die ($error);
 				$counter=0;
-				//$dbhandle -> exec($stm);
 				$result = $dbhandle->query('SELECT * FROM vacations ORDER BY startdate');
 				while($res = $result->fetchArray(SQLITE3_ASSOC)){
 					if ($counter !=0){
@@ -123,11 +98,9 @@
 					echo("}]}");
 					$counter++;
 				}
-
 				$dbhandle -> close();
 				if ($counter === 0){
-					// Show entry for today so we have a functional Gannt table
-					
+					// Show entry for today so we have a functional Gannt table even without entries
 					echo("{");
 					echo(' name: "Today",');
 					echo(' desc: "",');
@@ -145,12 +118,10 @@
 				minScale: "days",
 				itemsPerPage: 50
 			});
-			$("div#calendar").datepicker({ altField: 'input#startdate', altFormat: 'yy-mm-dd' });
-			$("div#calendar2").datepicker({ altField: 'input#enddate', altFormat: 'yy-mm-dd' });
+			// Date pickers
+			$("#startdate").datepicker({ altField: 'input#startdate', altFormat: 'yy-mm-dd' });
+			$("#enddate"  ).datepicker({ altField: 'input#enddate'  , altFormat: 'yy-mm-dd' });
 			prettyPrint();
-
 		});
-
-		</script>
 		</script>
 </html>

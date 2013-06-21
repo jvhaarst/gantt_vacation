@@ -100,7 +100,7 @@
 				}
 				$dbhandle -> close();
 				if ($counter === 0){
-					// Show entry for today so we have a functional Gannt table even without entries
+					// Show entry for today so we have a functional Gantt table even without entries
 					echo("{");
 					echo(' name: "Today",');
 					echo(' desc: "",');
@@ -116,7 +116,8 @@
 				scale: "weeks",
 				maxScale: "months",
 				minScale: "days",
-				itemsPerPage: 50
+				itemsPerPage: 50,
+				scrollToToday: true
 			});
 			// Date pickers
 			$("#startdate").datepicker({ altField: 'input#startdate', altFormat: 'yy-mm-dd' });

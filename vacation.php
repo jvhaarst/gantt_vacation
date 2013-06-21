@@ -6,8 +6,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" >
 		<link rel="stylesheet" href="http://code.jquery.com/ui/jquery-ui-git.css" />
 		<link rel="stylesheet" href="jQuery.Gantt/css/style.css" />
-		<link rel="stylesheet" href="jQuery.Gantt/css/bootstrap.css" />
-		<link rel="stylesheet" href="jQuery.Gantt/css/prettify.css" />
+		<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" />
+        	<link rel="stylesheet" href="http://taitems.github.com/UX-Lab/core/css/prettify.css" />
 		<style type="text/css">
 			body {
 				font-family: Helvetica, Arial, sans-serif;

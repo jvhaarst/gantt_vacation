@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="http://code.jquery.com/ui/jquery-ui-git.css" />
 		<link rel="stylesheet" href="jQuery.Gantt/css/style.css" />
 		<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" />
-        	<link rel="stylesheet" href="http://taitems.github.com/UX-Lab/core/css/prettify.css" />
+        <link rel="stylesheet" href="http://taitems.github.com/UX-Lab/core/css/prettify.css" />
 		<style type="text/css">
 			body {
 				font-family: Helvetica, Arial, sans-serif;
@@ -68,7 +68,6 @@
 	<script src="http://code.jquery.com/jquery.min.js"></script>
 	<script src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
 	<script src="jQuery.Gantt/js/jquery.fn.gantt.js"></script>
-	<script src="jQuery.Gantt/js/prettify.js"></script>
     <script>
 		$(function() {
 			"use strict";
@@ -122,7 +121,6 @@
 			// Date pickers
 			$("#startdate").datepicker({ altField: 'input#startdate', altFormat: 'yy-mm-dd' });
 			$("#enddate"  ).datepicker({ altField: 'input#enddate'  , altFormat: 'yy-mm-dd' });
-			prettyPrint();
 		});
 		</script>
 </html>

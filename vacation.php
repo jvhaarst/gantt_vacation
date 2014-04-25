@@ -15,7 +15,7 @@
 				padding: 0 0 50px 0;
 			}
 			.contain {
-				width: 800px;
+				width: 1000px;
 				margin: 0 auto;
 			}
 		</style>

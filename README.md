@@ -11,6 +11,11 @@ git clone https://github.com/jvhaarst/gantt_vacation.git vacation
 cd vacation
 git clone https://github.com/taitems/jQuery.Gantt.git
 ```
+
+If you are using a stock Ubuntu installation with Apache, then also install the necessary packages like this:
+```
+sudo aptitude install php5-sqlite sqlite3
+```
 Then point your browser to the directory.
 
 If you want to keep old data, just copy that over to the database directory.

@@ -7,7 +7,7 @@ Uses http://taitems.github.io/jQuery.Gantt/ for most of the work, and stores the
 
 ##Installation :
 ```
-git clone https://github.com/jvhaarst/gantt_vacation.git https://github.com/jvhaarst/gantt_vacation.git vacation
+git clone https://github.com/jvhaarst/gantt_vacation.git vacation
 cd vacation
 git clone https://github.com/taitems/jQuery.Gantt.git
 ```

@@ -13,5 +13,5 @@ git clone https://github.com/taitems/jQuery.Gantt.git
 ```
 Then point your browser to the directory.
 
-If you want to keep old data, just copy that over.
+If you want to keep old data, just copy that over to the database directory.
 

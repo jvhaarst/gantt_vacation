@@ -75,9 +75,12 @@
 				source: [
 				<?php
 				// Grab data from sqlite database and create entries for gantt table
-				$dbhandle = new SQLite3('database/vacation.sqlite');
-				//CREATE TABLE vacations(id INTEGER PRIMARY KEY NOT NULL default 1 , name TEXT, destination TEXT, startdate INTEGER, enddate INTEGER)
+				$dbhandle = new SQLite3('database/vacation.sqlite', SQLITE3_OPEN_READWRITE|SQLITE3_OPEN_CREATE);
 				if (!$dbhandle) die ($error);
+				// Create table for entries if it doesn exist yet.
+				$vacations= "CREATE TABLE IF NOT EXISTS vacations(id INTEGER PRIMARY KEY NOT NULL default 1 , name TEXT, destination TEXT, startdate INTEGER, enddate INTEGER)";
+				$dbhandle -> exec($vacations);
+
 				$counter=0;
 				$result = $dbhandle->query('SELECT * FROM vacations ORDER BY startdate');
 				while($res = $result->fetchArray(SQLITE3_ASSOC)){

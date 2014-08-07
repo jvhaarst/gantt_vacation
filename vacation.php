@@ -4,10 +4,10 @@
         <title>Vacation schedule</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" >
-		<link rel="stylesheet" href="http://code.jquery.com/ui/jquery-ui-git.css" />
+		<link rel="stylesheet" href="https://code.jquery.com/ui/jquery-ui-git.css" />
 		<link rel="stylesheet" href="jQuery.Gantt/css/style.css" />
-		<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" />
-        <link rel="stylesheet" href="http://taitems.github.com/UX-Lab/core/css/prettify.css" />
+		<link rel="stylesheet" href="https://twitter.github.com/bootstrap/assets/css/bootstrap.css" />
+        <link rel="stylesheet" href="https://taitems.github.com/UX-Lab/core/css/prettify.css" />
 		<style type="text/css">
 			body {
 				font-family: Helvetica, Arial, sans-serif;
@@ -65,8 +65,8 @@
 		<a target="_blank" href="phpliteadmin.php?action=row_view&table=vacations">Edit database</href>.
 		</div>
     </body>
-	<script src="http://code.jquery.com/jquery.min.js"></script>
-	<script src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
+	<script src="https://code.jquery.com/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/jquery-ui-git.js"></script>
 	<script src="jQuery.Gantt/js/jquery.fn.gantt.js"></script>
     <script>
 		$(function() {

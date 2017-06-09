@@ -1,11 +1,11 @@
-#gantt_vacation
+# gantt_vacation
 
 
 Simple wrapper site to keep track of who is on vacation, and show it in a gantt graph.
 
 Uses http://taitems.github.io/jQuery.Gantt/ for most of the work, and stores the dates in a SQLite database.
 
-##Installation :
+## Installation :
 ```
 git clone https://github.com/jvhaarst/gantt_vacation.git vacation
 cd vacation

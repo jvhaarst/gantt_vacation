@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="css/jquery-ui-git.css" />
 		<link rel="stylesheet" href="jQuery.Gantt/css/style.css" />
 		<link rel="stylesheet" href="css/bootstrap.css" />
-        <link rel="stylesheet" href="css/prettify.css" />
+		<link rel="stylesheet" href="css/prettify.css" />
 		<style type="text/css">
 			body {
 				font-family: Helvetica, Arial, sans-serif;
@@ -88,16 +88,18 @@
 						echo(",");
 					}
 					echo("{");
-					echo(' name: "'.$res['name'].'",');
-					echo(' desc: "'.$res['destination'].'",');
-					echo(" values: [{");
-					echo(' from: "/Date('.$res['startdate'].'000)/",');
-					echo(' to: "/Date('.$res['enddate'].'000)/",');
-					if ($res['destination']===""){
-						$res['destination'] = "Vacation";
+					echo(' "name": "'.$res['name'].'",');
+					echo(' "desc": "'.$res['destination'].'",');
+					echo(' "values": [{');
+					echo(' "from": "/Date('.$res['startdate'].'000)/",');
+					echo(' "to": "/Date('.$res['enddate'].'000)/",');
+					if ($res['"destination"']===""){
+						$res['"destination"'] = "Vacation";
 					}
-					echo(' label: "'.$res['destination'].'",customClass: "ganttBlue",');
+					echo(' "label": "'.$res['destination'].'",');
+					echo(' "customClass": "ganttBlue"');
 					echo("}]}");
+					echo("\n");
 					$counter++;
 				}
 				$dbhandle -> close();
